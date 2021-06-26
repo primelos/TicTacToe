@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  color: #4c6986;
+  background: #d8962433;
+}
+
+.wrapper {
+  max-width: 1440px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.title {
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #4c6986;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 50px;
+  margin: auto;
+}
+
+.restart:hover {
+  background-color: #4c6986;
+  color: white;
+}
+
+.header {
+  display: flex;
+  color: #9a9a9a;
+  font-size: 24px;
+}
+
+.game {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header .player-X {
+  flex: 1;
+  border-bottom: 5px solid #f59f56;
+  padding-bottom: 8px;
+}
+
+.player-X.active {
+  color: #42bed7;
+  border-color: #42bed7;
+}
+
+.header .player-O {
+  flex: 1;
+  border-bottom: 5px solid #f59f56;
+  padding-bottom: 8px;
+}
+.player-O.active {
+  color: #d7bafb;
+  border-color: #d7bafb;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.board-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(137, 163, 189, 0.58);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(137, 163, 189, 0.58);
+}
+
+.board-tile:hover {
+  background-color: #eee;
+}
+
+.tile-x {
+  color: #d7b042;
+}
+
+.tile-o {
+  color: #efd392;
+}
+
+.tile-winner span {
+  color: #23ce6b;
+}
+
+.left {
+  padding-left: 35px;
+}
+.right {
+  padding-right: 35px;
+}
+
+.flip-card-front {
+  color: #ef8d284d;
+  background: #ffe4b238;
+  width: 158px;
+  height: 146px;
+  text-align: center;
+  /* transform: rotateY(180deg); */
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .left {
+    margin-bottom: 50px;
+  }
+}
